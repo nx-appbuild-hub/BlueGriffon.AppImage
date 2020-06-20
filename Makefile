@@ -7,11 +7,9 @@ all:
 	wget --output-document=$(OUTPUT) --continue $(SOURCE)
 	chmod +x $(OUTPUT)
 	rm -rf ./AppDir
-	7z x $(OUTPUT) -o./AppDir
+	xorriso -indev $(OUTPUT) -osirrox on -extract / ./AppDir
 	rm -f $(OUTPUT)
-	chmod +x ./AppDir/*
-	chmod +x ./AppDir/usr/bin/*
-	cp --force ./AppRun ./AppDir/
 	export ARCH=x86_64 && bin/appimagetool.AppImage AppDir $(OUTPUT)
 	chmod +x $(OUTPUT)
+	rm -rf ./AppDir
 
