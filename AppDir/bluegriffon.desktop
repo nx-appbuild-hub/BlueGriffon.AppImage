@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=BlueGriffon
+Type=Application
+Comment=The next-generation Web Editor
+Exec=bluegriffon.wrapper
+Icon=bluegriffon
+Categories=Development;
